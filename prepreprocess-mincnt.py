@@ -16,10 +16,7 @@ def wordCount(pt):
     for l in open(pt):
         ws = l.strip().split()
         for w in ws:
-            if w not in w2cnt:
-                w2cnt[w] = 1
-            else:
-                w2cnt[w] = w2cnt[w] + 1
+            w2cnt[w] = w2cnt.get(w,0) + 1
 
 def indexFile(pt, out_pt, min_count = 10):
     print('index file: ', pt)
